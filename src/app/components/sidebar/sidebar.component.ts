@@ -13,7 +13,6 @@ export class SidebarComponent implements OnInit {
   }
 
   onListClick(value: string) {
-    debugger;
     this.selectedList = value
   }
 }
