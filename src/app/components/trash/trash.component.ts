@@ -30,8 +30,8 @@ export class TrashComponent implements OnInit {
   restoreProduct(id: number) {
     let index = this.trash.findIndex(x => x.id === id);
     this.productService.products.push(this.trash[index]);
+    // this.trash.splice(index, 1);
     this.trash.splice(index, 1);
-    this.productService.trash.splice(index, 1);
     this.productService.setProducts();
   }
 
@@ -45,10 +45,8 @@ export class TrashComponent implements OnInit {
       },
       delete: () => {
         let index = this.trash.findIndex(x => x.id === id);
-        this.productService.trash.push(this.productService.products[index])
+        // this.productService.trash.push(this.productService.products[index])
         this.trash.splice(index, 1);
-        this.productService.trash.splice(index, 1);
-        // this.productService.products.splice(index, 1)
         this.productService.setProducts()
         dialog.close()
       }
