@@ -45,7 +45,6 @@ export class TrashComponent implements OnInit {
       },
       delete: () => {
         let index = this.trash.findIndex(x => x.id === id);
-        // this.productService.trash.push(this.productService.products[index])
         this.trash.splice(index, 1);
         this.productService.setProducts()
         dialog.close()
